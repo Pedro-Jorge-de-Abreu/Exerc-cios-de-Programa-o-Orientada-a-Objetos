@@ -1,25 +1,12 @@
-﻿namespace CalculoSalario
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            CalculadoraDeSalario func = new CalculadoraDeSalario();
+﻿Hospede h = new Hospede();
+h.ReceberDados();
 
-            func.ReceberDados();
-            func.MostrarSalario();
-            Console.Write("Digite o percentual de AUMENTO (ex: 10): ");
-            double percAumento = double.Parse(Console.ReadLine());
-            func.CalcularAumento(percAumento);
-            func.MostrarSalario();
-            Console.Write("Digite o percentual de DESCONTO (ex: 5): ");
-            double percDesconto = double.Parse(Console.ReadLine());
-            func.CalcularDesconto(percDesconto); 
+Reserva r = new Reserva();
+r.ReceberDadosReserva();
+r.CalcularTotal();
 
-            func.MostrarSalario();
+h.MostrarDados();
+r.MostrarReserva();
 
-            Console.WriteLine("\nPressione qualquer tecla para sair...");
-            Console.ReadKey();
-        }
-    }
-}
+Console.WriteLine("\nPressione qualquer tecla para fechar...");
+Console.ReadKey();
