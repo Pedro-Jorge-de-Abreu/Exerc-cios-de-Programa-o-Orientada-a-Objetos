@@ -1,22 +1,21 @@
-﻿namespace banco
+﻿namespace CriarProduto
 {
     class Program
     {
         static void Main(string[] args)
         {
+            Produto prod = new Produto();
 
-            ContaBancaria minhaConta = new ContaBancaria();
+            prod.ReceberDados();
+            prod.MostrarProduto();
 
-            minhaConta.ReceberDados();
-            minhaConta.MostrarSaldo();
+            prod.AdicionarEstoque();
+            prod.MostrarProduto();
 
-            minhaConta.Depositar();
-            minhaConta.MostrarSaldo();
+            prod.RemoverEstoque();
+            prod.MostrarProduto();
 
-            minhaConta.Sacar();
-            minhaConta.MostrarSaldo();
-
-            Console.WriteLine("\nPressione qualquer tecla para encerrar...");
+            Console.WriteLine("\nPressione qualquer tecla para sair...");
             Console.ReadKey();
         }
     }
